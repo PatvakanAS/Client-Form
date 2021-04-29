@@ -1,0 +1,204 @@
+@import "./variables";
+@import "./mixins";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+p.errorMessage {
+  color: $errorCol;
+}
+
+.is-invalid {
+  outline: $errorCol !important;
+  border-color: white !important;
+  box-shadow: 0 0 0 1px $errorCol !important;
+  // color: $errorCol!important;
+}
+
+.is-invalid:focus {
+  outline: $errorCol !important;
+  border-color: $errorCol !important;
+  box-shadow: 0 0 0 0.1px $errorCol !important;
+}
+
+.error {
+  color: $errorCol;
+  font-size: 13px;
+  width: 200px;
+  margin-top: 3px;
+}
+
+// select[multiple]:focus option:checked {
+//     //background: #fff linear-gradient(0deg, #fff 0%, #fff 100%);
+//     color: #2c3345 linear-gradient(0deg, #2c3345 0%, #2c3345 100%);
+// }
+
+.container {
+  padding: 100px 0;
+  background: #7f7fd5; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #91eae4,
+    #86a8e7,
+    #7f7fd5
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #91eae4,
+    #86a8e7,
+    #7f7fd5
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.formBlock {
+  max-width: 750px;
+  margin: auto;
+  border-radius: 6px;
+  padding: 10px;
+  background: rgba(255, 255, 255, 1);
+  form {
+    margin-top: 10x;
+    padding: 10px 10px 50px;
+    div {
+      margin-bottom: 50px;
+    }
+    .fullName {
+      @include inputBlock();
+      label {
+        p.inputContainer {
+          i {
+            display: none;
+          }
+        }
+        p.inputError {
+          position: relative;
+          i {
+            @include iconError();
+          }
+        }
+      }
+    }
+    .birthDate {
+      @include inputBlock();
+      label {
+        p.inputContainer {
+          i {
+            display: none;
+          }
+        }
+        p.inputError {
+          position: relative;
+          i {
+            @include iconError();
+          }
+        }
+        span {
+          display: block;
+        }
+        color: $nameCol;
+        select {
+          cursor: pointer;
+          margin-top: 5px;
+          //appearance: none;
+          @include inputStyle();
+
+          option {
+            display: inline-block;
+            width: 100%;
+            color: $nameCol;
+          }
+        }
+      }
+    }
+    .clientGroup {
+      @include inputBlock();
+      //justify-content: space-around;
+      align-items: flex-start;
+      select {
+        @include inputStyle();
+        width: 340px;
+      }
+
+      #clientGroup {
+        option {
+          padding: 10px;
+          background: white !important;
+          &:hover {
+            cursor: pointer;
+          }
+          &:checked {
+            background: #000;
+          }
+        }
+      }
+    }
+    .noMessageCheck {
+      @include inputStyle();
+      border: 0;
+    }
+    .addresBlock {
+      @include inputBlock();
+      p.inputContainer {
+        i {
+          display: none;
+        }
+      }
+      p.inputError {
+        position: relative;
+        i {
+          position: absolute;
+          right: 10px;
+          top: 10px;
+          color: #f79483;
+          display: inline;
+        }
+      }
+    }
+    .passportDocuments {
+      @include inputBlock();
+      flex-direction: column;
+      label,
+      input {
+        width: 100%;
+        margin-bottom: 50px;
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+      select {
+        @include inputStyle();
+        width: 100%;
+        option {
+          display: inline-block;
+          width: 100%;
+          color: $nameCol;
+          cursor: pointer !important;
+        }
+      }
+    }
+    .dateissue {
+      @include inputBlock();
+      input {
+        width: 340px;
+      }
+    }
+    #btn {
+      @include inputStyle();
+      width: 100%;
+      cursor: pointer;
+      color: $nameCol;
+      outline: none;
+      background: transparent;
+      font-weight: 800;
+    }
+  }
+}
+
+
+// @media only screen and (max-width: 600px) and (min-width: 400px)  {
+//   .formBlock {
+//     width: 100%;
+//   }
+// }

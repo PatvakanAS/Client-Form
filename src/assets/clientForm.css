@@ -1,0 +1,29 @@
+p.errorMessage {
+  color: #f79483;
+}
+
+.is-invalid {
+  outline: #f79483 !important;
+  border-color: white !important;
+  -webkit-box-shadow: 0 0 0 1px #f79483 !important;
+          box-shadow: 0 0 0 1px #f79483 !important;
+}
+
+.is-invalid:focus {
+  outline: #f79483 !important;
+  border-color: #f79483 !important;
+  -webkit-box-shadow: 0 0 0 0.1px #f79483 !important;
+          box-shadow: 0 0 0 0.1px #f79483 !important;
+}
+
+.error {
+  color: #f79483;
+  font-size: 13px;
+  width: 200px;
+  margin-top: 3px;
+}
+
+select[multiple]:focus option:checked {
+  color: #2c3345 linear-gradient(0deg, #2c3345 0%, #2c3345 100%);
+}
+/*# sourceMappingURL=clientForm.css.map */
